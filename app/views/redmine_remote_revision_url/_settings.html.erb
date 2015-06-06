@@ -1,0 +1,4 @@
+<% settings = {} unless settings.is_a? Hash %>
+
+<%= check_box_tag 'settings[open_in_new_window]', true, !!settings[:open_in_new_window] %>
+Open Remote Revision Links in New Tab/Window

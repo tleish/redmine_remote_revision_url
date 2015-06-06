@@ -1,0 +1,3 @@
+en:
+  field_extra_remote_revision_url: "Remote Revision URL"
+  field_extra_remote_revision_url_info: "Insert :revision in the URL where the revision identifier should appear (e.g. https://website.com/my/project/commit/:revision)."
