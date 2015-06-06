@@ -13,4 +13,10 @@ RepositoriesHelper.class_eval do
                  content_tag(:em, l(:field_extra_remote_revision_url_info), class: 'info')
     )
   end
+
+  def linkify_id(html)
+    return html unless @repository.identifier.present?
+    revision_link = @rev.html_safe + link_to_web_revision(@changeset)
+    html.sub(content_tag(:td, @rev), content_tag(:td, revision_link)).html_safe
+  end
 end

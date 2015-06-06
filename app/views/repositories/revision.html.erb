@@ -1,0 +1,8 @@
+<%
+   original_partial = File.join(Rails.root, 'app' ,'views', 'repositories', 'revision.html.erb')
+   html = capture { render file: original_partial }
+
+   html = linkify_id(html)
+%>
+
+<%= html %>
