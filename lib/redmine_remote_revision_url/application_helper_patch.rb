@@ -12,8 +12,9 @@ module ApplicationHelper
     url = link_to_web_revision_url(revision)
     return unless url.present?
     text = url.split('/').reject(&:empty?)[1]
-    ' | '.html_safe +
-      link_to(h(text), url, title: l(text), target: link_to_web_revision_target)
+    '&nbsp;('.html_safe +
+      link_to(h(text), url, { title: l(text), target: link_to_web_revision_target }) +
+      ')'
   end
 
   def link_to_web_revision_url(revision)
