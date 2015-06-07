@@ -11,7 +11,9 @@ RepositoriesHelper.class_eval do
 
   def linkify_id(html)
     return html unless @repository.identifier.present?
-    revision_link = @rev.html_safe + link_to_web_revision(@changeset)
+    revision_link = "#{@rev} (".html_safe +
+      link_to_web_revision(@changeset, @changeset.repository)  +
+      ')'
     html.sub(content_tag(:td, @rev), content_tag(:td, revision_link)).html_safe
   end
 

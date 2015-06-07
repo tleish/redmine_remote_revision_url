@@ -21,7 +21,7 @@ module ApplicationHelper
   def combine_link_to_web_revision(revision, repository, options = {})
     original_link_to_revision(revision, repository, options) +
       '&nbsp;('.html_safe +
-      link_to_web_revision(revision, repository)  +
+      link_to_web_revision(revision, repository) +
       ')'
   end
 
