@@ -1,3 +1,5 @@
 en:
+  field_extra_remote_revision_text: "Remote Revision Text"
+  field_extra_remote_revision_text_info: "Custom link text.  If blank, defaults to domain name in Remote Revision URL."
   field_extra_remote_revision_url: "Remote Revision URL"
-  field_extra_remote_revision_url_info: "Insert :revision in the URL where the revision identifier should appear (e.g. https://website.com/my/project/commit/:revision)."
+  field_extra_remote_revision_url_info: "Insert <em>:revision</em> in the URL where the revision identifier should appear (e.g. https://website.com/my/project/commit/:revision)."
