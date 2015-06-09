@@ -4,14 +4,17 @@ module ApplicationHelper
   alias_method :original_link_to_revision, :link_to_revision
   def link_to_revision(revision, repository, options = {})
     repository = safe_repository(repository)
-    if plugin_redmine_remote_revision_url('replace_revision_link')
-      replace_link_to_web_revision(revision, repository, options)
-    else
-      combine_link_to_web_revision(revision, repository, options)
-    end
+    method = link_to_revision_method(repository)
+    send(method, revision, repository, options)
   end
 
   private
+
+  def link_to_revision_method(repository)
+    return :original_link_to_revision if repository.extra_remote_revision_url.blank?
+    return :replace_link_to_web_revision if plugin_redmine_remote_revision_url('replace_revision_link')
+    :combine_link_to_web_revision
+  end
 
   def replace_link_to_web_revision(revision, repository, options = {})
     options[:text] ||= format_revision(revision)
