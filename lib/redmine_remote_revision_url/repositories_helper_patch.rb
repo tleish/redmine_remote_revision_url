@@ -9,7 +9,7 @@ RepositoriesHelper.class_eval do
     html
   end
 
-  def linkify_id(html)
+  def add_remote_link(html)
     return html unless @repository.identifier.present?
     link =  link_to_web_revision(@changeset, @changeset.repository)
     return html unless link.present?
