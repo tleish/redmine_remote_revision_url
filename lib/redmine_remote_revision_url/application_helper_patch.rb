@@ -37,7 +37,7 @@ module ApplicationHelper
     url = link_for_web_revision_url(revision, repository)
     return unless url.present?
     text = options.delete(:text) || repository.extra_remote_revision_text
-    link_to(h(text), url, { title: l(text), target: link_to_web_revision_target })
+    link_to(h(text), url, { title: text, target: link_to_web_revision_target })
   end
 
   def link_for_web_revision_url(revision, repository)
