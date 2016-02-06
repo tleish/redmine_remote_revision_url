@@ -1,0 +1,5 @@
+de:
+  field_extra_remote_revision_text: "Text für entferntes Repository"
+  field_extra_remote_revision_text_info: "Benutzerdefinierter Linktext. Bei leerem Wert wird der Domainname des entfernten Repositories verwendet."
+  field_extra_remote_revision_url: "URL des entfernten Repositorys"
+  field_extra_remote_revision_url_info: "Ersetzen Sie in der URL die Revisions-ID mit dem Platzhalter <em>:revision</em> (z.B. https://website.com/my/project/commit/:revision)."
