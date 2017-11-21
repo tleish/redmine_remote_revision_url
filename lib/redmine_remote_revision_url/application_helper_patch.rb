@@ -12,7 +12,7 @@ module ApplicationHelper
 
   def link_to_revision_method(repository)
     return :original_link_to_revision if repository.extra_remote_revision_url.blank?
-    return :replace_link_to_web_revision if plugin_redmine_remote_revision_url('replace_revision_link')
+    return :replace_link_to_web_revision if Setting.plugin_redmine_remote_revision_url[:replace_revision_link].to_i == 1
     :combine_link_to_web_revision
   end
 
@@ -46,12 +46,8 @@ module ApplicationHelper
   end
 
   def link_to_web_revision_target
-    open_in_new_window = plugin_redmine_remote_revision_url('open_in_new_window')
+    open_in_new_window = Setting.plugin_redmine_remote_revision_url[:open_in_new_window].to_i == 1
     open_in_new_window ? '_blank' : '_top'
   end
 
-  def plugin_redmine_remote_revision_url(setting)
-    return nil unless Setting.plugin_redmine_remote_revision_url.is_a? Hash
-    Setting.plugin_redmine_remote_revision_url[setting]
-  end
 end

@@ -15,7 +15,10 @@ This allows a user to quickly jump to github, gitlab, bitbucket, a code review w
 $ cd redmine/plugins
 $ git clone https://github.com/tleish/redmine_remote_revision_url
 ```
-
+So run the following command for db migration
+```
+$ rake redmine:plugins NAME=redmine_remote_revision_url RAILS_ENV=production
+```
 Restart Redmine
 
 ## Repository Settings
