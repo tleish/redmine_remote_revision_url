@@ -3,7 +3,7 @@ Repository.class_eval do
   safe_attributes 'extra_remote_revision_text'
 
   def extra_remote_revision_url(revision=nil)
-    url = extra_info[:extra_remote_revision_url] || ''
+    url = extra_info && extra_info[:extra_remote_revision_url] || ''
     return url unless revision.present?
     url.sub(':revision', revision)
   end
