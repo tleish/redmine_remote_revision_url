@@ -3,7 +3,7 @@ Repository.class_eval do
   safe_attributes 'extra_remote_revision_text'
 
   def extra_remote_revision_url(revision=nil)
-    url = extra_info && extra_info[:extra_remote_revision_url] || ''
+    url = safe_extra_info[:extra_remote_revision_url] || ''
     return url unless revision.present?
     url.sub(':revision', revision)
   end
@@ -13,7 +13,7 @@ Repository.class_eval do
   end
 
   def extra_remote_revision_text
-    return extra_info[:extra_remote_revision_text] || extra_remote_revision_default_text
+    safe_extra_info[:extra_remote_revision_text] || extra_remote_revision_default_text
   end
 
   def extra_remote_revision_text=(arg)
@@ -21,6 +21,10 @@ Repository.class_eval do
   end
 
   private
+
+  def safe_extra_info
+    extra_info || {}
+  end
 
   def extra_remote_revision_default_text
     extra_remote_revision_url.split('/').reject(&:empty?)[1]
