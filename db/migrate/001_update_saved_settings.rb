@@ -1,4 +1,4 @@
-class UpdateSavedSettings < ActiveRecord::Migration
+class UpdateSavedSettings < ActiveRecord::Migration[4.2]
   def up
     setting = Setting.find_by(name: 'plugin_redmine_remote_revision_url')
 
