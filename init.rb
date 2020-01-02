@@ -1,7 +1,7 @@
 require_dependency 'redmine_remote_revision_url/repository_patch'
 require_dependency 'redmine_remote_revision_url/repositories_helper_patch'
 
-ActionDispatch::Callbacks.to_prepare do
+ActiveSupport::Reloader.to_prepare do
   require_dependency 'application_helper'
   require_dependency 'redmine_remote_revision_url/application_helper_patch'
 end
