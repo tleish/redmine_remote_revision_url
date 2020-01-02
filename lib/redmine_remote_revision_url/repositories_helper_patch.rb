@@ -5,7 +5,7 @@ RepositoriesHelper.class_eval do
   def repository_field_tags(form, repository)
     html = original_repository_field_tags(form, repository)
     html += extra_remote_revision_url_tag(form)
-    html += extra_remote_revision_text_tag(form) unless Setting.plugin_redmine_remote_revision_url[:replace_revision_link].to_i == 1
+    html += extra_remote_revision_text_tag(form) unless Setting.plugin_redmine_remote_revision_url['replace_revision_link'].to_i == 1
     html
   end
 

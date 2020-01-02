@@ -1,6 +1,6 @@
 <div>
   <%= hidden_field_tag 'settings[replace_revision_link]', 0 %>
-  <%= check_box_tag 'settings[replace_revision_link]', 1, @settings[:replace_revision_link].to_i == 1 %>
+  <%= check_box_tag 'settings[replace_revision_link]', 1, @settings['replace_revision_link'].to_i == 1 %>
   Replace the Redmine Revision Links (instead of adding additional link)
 </div>
 
@@ -8,6 +8,6 @@
 
 <div>
   <%= hidden_field_tag 'settings[open_in_new_window]', 0 %>
-  <%= check_box_tag 'settings[open_in_new_window]', 1, @settings[:open_in_new_window].to_i == 1 %>
+  <%= check_box_tag 'settings[open_in_new_window]', 1, @settings['open_in_new_window'].to_i == 1 %>
   Open Remote Revision Links in New Tab/Window
 </div>
